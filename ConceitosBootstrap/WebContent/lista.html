@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8" />
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/estilos.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	
+</script>
+</head>
+<body>
+	<div class="container">
+		<h1>Listagem de Candidatos</h1>
+		<form >
+			<div class="borda">
+				<div class="linha">
+					<label class="coluna col-5" for="btnListar"> Clique aqui
+						para ver os candidatos: </label>
+					<div class="col-7">
+						<input id="btnListar" type="button" value="Listar" onclick="listar();" />
+					
+					</div>
+
+				</div>
+				<div class="linha">
+					<ul id="listaCandidatos"></ul>
+				</div>
+			</div>
+
+			<div class="borda">
+				<div class="linha">
+					<label class="coluna col-5" > Informe o
+						email para deletar o candidato: </label>
+
+
+					<div class="row">
+						<div class="col-md-9">
+							<input type="text" id="emailExcluir">
+						</div>
+					</div>
+                
+			
+					<div class="col-7">
+						<input id="btnExcluir" type="button" value="Excluir"  />
+					</div>
+				
+			</div>
+				<a href="http://localhost:8080/ConceitosBootstrap/index.html">Voltar
+					para a página inicial</a>
+			</div>
+		</form>
+	</div>
+
+
+	<footer class="footer">
+		<p>Desenvolvido para os cursos da Fiap SCJ</p>
+		<p>Copyright 2017 - Todos os direitos reservados</p>
+	</footer>
+
+
+</body>
+
+<script src="js/listarExcluir.js">
+	
+</script>
+
+</html>

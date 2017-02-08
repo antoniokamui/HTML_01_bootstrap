@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Registro de Alunos</title>
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/estilos.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	
+</script>
+</head>
+<body>
+
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Fiap SCJ</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="#cursos">Cursos</a></li>
+					<li><a href="#alunos">Inscrição</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div id="slides" class="carousel slide" data-ride="carousel"
+				data-interval="2000">
+				<ol class="carousel-indicators">
+					<li data-target="#slides" data-slide-to="0" class="active"></li>
+					<li data-target="#slides" data-slide-to="1"></li>
+					<li data-target="#slides" data-slide-to="2"></li>
+				</ol>
+				<!-- conteudo dos slides -->
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img src="imagens/carousel01.jpg" alt="Imagem 1" />
+					</div>
+					<div class="item">
+						<img src="imagens/carousel02.jpg" alt="Imagem 2" />
+					</div>
+					<div class="item">
+						<img src="imagens/carousel03.jpg" alt="Imagem 4" />
+					</div>
+				</div>
+			</div>
+			<a class="left carousel-control" href="#slides" role="button"
+				data-slide="prev"> <span
+				class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Anterior</span>
+			</a> <a class="right carousel-control" href="#slides" role="button"
+				data-slide="next"> <span
+				class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Proxima</span>
+			</a>
+		</div>
+	</div>
+
+	<div>
+		<a class="registro" href="#alunos">Inscreva-se<br /> <span
+			class="free">&#183; Hoje &#183;</span>
+		</a>
+	</div>
+
+	<div class="container body-content clearfix">
+		<section id="cursos">
+			<h1>Cursos Oferecidos</h1>
+			<p>A Fiap oferece cursos na área de T.I., nas seguintes
+				modalidades:</p>
+			<ul>
+				<li>Presencial</li>
+				<li>Online</li>
+				<li><i>In-company</i></li>
+			</ul>
+			<div class="row center-image">
+				<div class="col-md-4">
+					<h3>Presencial</h3>
+					<img src="imagens/curso-presencial.jpg"
+						class="img-circle margin-image" />
+					<p>
+						Nesta modalidade os cursos são oferecidos nas unidades: Lins,
+						Paulista, Vila Olímpia e Alphaville. <br /> Consulte o <a
+							href="http://www.fiap.com.br">portal</a>
+					</p>
+				</div>
+				<div class="col-md-4">
+					<h3>Online</h3>
+					<img src="imagens/curso-online.jpg" class="img-circle margin-image" />
+					<p>
+						Não tem tempo de ir até nossa unidade? Necessita estudar, e possui
+						horários diversificados? Temos cursos também na modalidade <i>online</i>.<br />
+						Assim, você estuda na hora e nas datas que estiver disponível,
+						respeitando o período de oferta dos módulos.
+					</p>
+				</div>
+				<div class="col-md-4">
+					<h3>
+						<i>In-company</i>
+					</h3>
+					<img src="imagens/curso-incompany.jpg"
+						class="img-circle margin-image" />
+					<p>Se sua empresa necessita de treinamentos personalizados,
+						atendendo a necessidades específicas, temos uma equipe altamente
+						capacitada para ir até sua empresa e levar o conteúdo que você
+						precisa.</p>
+				</div>
+			</div>
+		</section>
+
+		<div>
+			<a class="registro" href="#cadastro">Inscreva-se<br /> <span
+				class="free">&#183; Hoje &#183;</span>
+			</a>
+		</div>
+
+
+		<section id="alunos">
+
+			<div class="row">
+				<label class="col-md-3" for="nome">Nome</label>
+				<div class="col-md-9">
+					<input type="text" id="nome" >
+				</div>
+			</div>
+
+		 <div class="row">
+				<label class="col-md-3" for="email">Email</label>
+				<div class="col-md-9">
+					<input type="text" id="email" >
+				</div>
+			</div>
+
+			<div class="row">
+				<label class="col-md-3" for="curso">Curso Desejado:</label>
+				<div class="col-md-9">
+					<select id="curso" name="curso"></select>
+				</div>
+			</div>
+
+ 		<div class="row">
+					<input id="btnADD"  type="button" value="Enviar" />
+		</div>
+
+
+        	<div class="row">
+        	<div class="col-md-3">
+        	</div>
+        	<div class="col-md-9">
+				<a href="http://localhost:8080/ConceitosBootstrap/lista.html">Ir
+					para a página de lista de candidatos</a>
+					</div>
+			</div>
+		
+
+		</section>
+		
+		
+	</div>
+
+
+
+
+	<footer class="footer">
+		<p>Desenvolvido para os cursos da Fiap SCJ</p>
+		<p>Copyright 2017 - Todos os direitos reservados</p>
+	</footer>
+
+
+
+</body>
+<script src="js/cursos.js">
+	
+</script>
+
+
+</html>
