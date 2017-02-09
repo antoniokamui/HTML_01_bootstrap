@@ -47,7 +47,7 @@ function listar() {
 				var cursor = event.target.result;
 				if (cursor) {
 					
-					$("#listaCandidatos").append("<li> Nome: " + cursor.value.nome + "</li>"  + "<li> Email: " + cursor.value.email + "</li>" + "<li> Nome: " + cursor.value.curso + "</li><br><br>" );
+					$("#listaCandidatos").append("<li> Nome: <label id ='nome'>" + cursor.value.nome + "</label> </li>"  + "<li> Email: <label id='email'>" + cursor.value.email + " </label></li>" + "<li> Curso: <label id='curso'>" + cursor.value.curso + "</label></li><br><br>" );
 					cursor.continue();
 				}
 			};
@@ -68,17 +68,28 @@ $("#btnExcluir").click(function(){
 	email = email.replace(/^\s+|\s+$/g,"");
 	
 	if(email != null && email != "" ){
-	emailExiste = false;
+	emailExiste = 0;
 		
 		
-	request = db.transaction([ "candidatos" ], "readonly").objectStore("candidatos");
-	request.openCursor().onsuccess = function(event) {
-			var cursor = event.target.result;
-			if(cursor) {
-			 	if(cursor.value.email == email){
-					emailExiste = true;
-	                request = db.transaction([ "candidatos" ],  "readwrite").objectStore("candidatos").delete(email);	
+		  $( "ul li label" ).each(function( index, element ) {
+			  if($( this ).is("#email") ){
+				  if($(this).text().indexOf(email) != -1  ){
+					  emailExiste++;
+					  
+			  }
+			  }
+			  
+		  });
+		
+
+			
+		
+		 if(emailExiste == 0){
+				 alert("email informado não existe na lista de inscritos");
+				}else{
 					
+					request = db.transaction([ "candidatos" ],  "readwrite").objectStore("candidatos").delete(email);	
+
 					request.onsuccess = function(event){
 					alert("Removido!");
 					listar();
@@ -87,14 +98,7 @@ $("#btnExcluir").click(function(){
 					request.onerror = function(event){
 						alert("Ao tentar excluir email!");
 					};	
-				}
-				cursor.continue();
-				}			
-			};
-		
-		 if(!emailExiste){
-				 alert("email informado não existe na lista de inscritos");
-				}
+				} 
 		
 	}else{
 		alert("Ao tentar excluir o campo esta nullo");
